@@ -2,7 +2,7 @@ import RPi.GPIO as gpio
 import time
 gpio.setwarnings(False)
 gpio.setmode(gpio.BCM)
-gpio.setup(19,gpio.IN)
+gpio.setup(19,gpio.IN,pull_up_down=GPIO.PUD_DOWN)
 gpio.setup(20,gpio.OUT)
 try:
     while True:
