@@ -14,7 +14,7 @@ led_2 = [4,5,2,6,7]
 led_1 = [5,8]
 led_0 = [3,4,5,6,7,8]
 time.sleep(3)
-gpio.setup(10,gpio.IN)
+gpio.setup(10,gpio.IN,pull_up_down=GPIO.PUD_DOWN)
 for i in led_port:
     gpio.setup(i,gpio.OUT)
 def num_9():
@@ -52,7 +52,7 @@ def off():
         gpio.output(i,False)
 try:
     while True:
-        if gpio.input(10)==0:
+        if gpio.input(10)==1:
             num_9()
             time.sleep(1)
             off()
